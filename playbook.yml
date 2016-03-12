@@ -2,7 +2,7 @@
   hosts: localhost
   gather_facts: False
   vars:
-    key_name: alex1
+    key_name: your_ec2_key
     instance_type: t2.micro
     vpc_id: vpc-707b5714
     security_group: sg-309a3748
