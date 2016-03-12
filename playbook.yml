@@ -1,0 +1,21 @@
+- name: Create a sandbox instance
+  hosts: localhost
+  gather_facts: False
+  vars:
+    key_name: alex1
+    instance_type: t2.micro
+    vpc_id: vpc-707b5714
+    security_group: sg-309a3748
+    image: ami-fce3c696
+    region: us-east-1
+  tasks:
+    - name: Launch instance
+      ec2:
+         key_name: "{{ key_name }}"
+#         group: "{{ security_group }}"
+         instance_type: "{{ instance_type }}"
+         image: "{{ image }}"
+         wait: true
+         region: "{{ region }}"
+         vpc_subnet_id: subnet-0043e62a
+         assign_public_ip: yes
